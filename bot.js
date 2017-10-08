@@ -14,7 +14,11 @@ controller.spawn({
 
 controller.on('channel_joined', (bot, message) => {
     bot.say({
-        text: `I didn't want to join ${message.channel.name} ¬_¬ but I guess...`,
+        text: `I didn't want to join ¬_¬ ${message.channel.name}`,
         channel: message.channel.id
     })
+})
+
+controller.hears('','direct_message,direct_mention,mention',function(bot,message) {
+    bot.reply(message, "")
 })
